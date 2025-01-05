@@ -1,10 +1,13 @@
 import type { NextPage } from 'next';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { ThemeSwitch } from '../components/theme-switch';
 import { WalletInfo } from '../components/wallet-info';
+import { useAccount } from 'wagmi';
+import { DepositFunds } from '../components/deposit-funds';
 
 const Home: NextPage = () => {
+  const { isConnected } = useAccount();
 
   return (
     <div
@@ -15,7 +18,8 @@ const Home: NextPage = () => {
         <h1 className="text-2xl font-semibold mb-4">Deposit Funds into Vault</h1>
         <ThemeSwitch />
         <WalletInfo />
-        </div>
+        {isConnected && <DepositFunds />}
+      </div>
     </div>
   );
 };

@@ -32,6 +32,6 @@ export const config = getDefaultConfig({
   ],
   ssr: true,
   transports: {
-    [virtualArbitrumOne.id]: http('https://virtual.arbitrum.rpc.tenderly.co/a63a5990-ce6f-4822-b8ff-9c779ce13a23')
+    [virtualArbitrumOne.id]: http(virtualArbitrumOne.rpcUrls.default.http[0]),
   },
 });
