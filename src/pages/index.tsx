@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 
 import React, { useState } from 'react';
+import { ThemeSwitch } from '../components/theme-switch';
 
 const Home: NextPage = () => {
 
@@ -11,6 +12,7 @@ const Home: NextPage = () => {
     >
       <div className="flex flex-col space-y-4 items-center justify-center">
         <h1 className="text-2xl font-semibold mb-4">Deposit Funds into Vault</h1>
+        <ThemeSwitch />
       </div>
     </div>
   );
